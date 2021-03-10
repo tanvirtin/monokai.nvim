@@ -93,11 +93,9 @@ function monokai.load_syntax()
             fg = monokai.border
         },
         Visual = {
-            fg = monokai.white,
             bg = monokai.base4
         },
         VisualNOS = {
-            fg = monokai.white,
             bg = monokai.base4
         },
         Search = {
