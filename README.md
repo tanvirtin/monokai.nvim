@@ -6,7 +6,7 @@ Monokai Theme for Neovim with tree-sitter support
 
 ### Installation:
 ```
-Plug tanvirtin/vim-monokai
+Plug tanvirtin/nvim-monokai
 ```
 
 ### Usage
