@@ -7,7 +7,7 @@ local palette = {
     base2 = '#26292C',
     base3 = '#2E323C',
     base4 = '#333842',
-    base5 = '#666c70',
+    base5 = '#4d5154',
     base6 = '#9ca0a4',
     base7 = '#b1b1b1',
     border = '#a1b5b1',
@@ -134,7 +134,7 @@ M.load_syntax = function()
             fg = palette.brown,
         },
         LineNr = {
-            fg = palette.base4,
+            fg = palette.base5,
             bg = palette.base2
         },
         SignColumn = {
@@ -297,7 +297,7 @@ M.load_syntax = function()
             fg = palette.orange,
         },
         Comment = {
-            fg = palette.base5,
+            fg = palette.base6,
         },
         Underlined = {
             fg = palette.none,
