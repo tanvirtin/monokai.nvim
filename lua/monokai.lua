@@ -477,7 +477,7 @@ M.setup = function()
     end
     vim.o.background = 'dark'
     vim.o.termguicolors = true
-    vim.g.colors_name = 'palette'
+    vim.g.colors_name = 'monokai'
     local syntax = M.load_syntax()
     for group, colors in pairs(syntax) do
         M.highlight(group, colors)
