@@ -2,7 +2,36 @@ local vim = vim
 
 local M = {}
 
-local palette = {
+M.palette_monokai = {
+    base1 = '#272a30',
+    base2 = '#26292C',
+    base3 = '#2E323C',
+    base4 = '#333842',
+    base5 = '#4d5154',
+    base6 = '#9ca0a4',
+    base7 = '#b1b1b1',
+    border = '#a1b5b1',
+    brown = "#504945",
+    white = '#f8f8f0',
+    grey = '#8F908A',
+    black = '#000000',
+    pink = '#f92672',
+    green = '#a6e22e',
+    aqua = '#66d9ef',
+    yellow = '#e6db74',
+    orange = '#fd971f',
+    purple = '#ae81ff',
+    red = '#e95678',
+    diff_add_fg = '#6a8f1f',
+    diff_add_bg = '#3d5213',
+    diff_remove_fg = '#4a0f23',
+    diff_remove_bg = '#a3214c',
+    diff_change_fg = '#7AA6DA',
+    diff_change_bg = '#537196',
+    none = 'NONE'
+}
+
+M.palette_monokai_pro = {
     base1 = '#272a30',
     base2 = '#26292C',
     base3 = '#2E323C',
@@ -39,7 +68,7 @@ M.highlight = function(group, color)
     vim.cmd('highlight ' .. group .. ' ' .. style .. ' ' .. fg .. ' ' .. bg .. ' ' .. sp)
 end
 
-M.load_syntax = function()
+M.load_syntax = function(palette)
     return {
         Normal = {
             fg = palette.white,
@@ -375,7 +404,7 @@ M.load_syntax = function()
     }
 end
 
-M.load_plugin_syntax = function()
+M.load_plugin_syntax = function(palette)
     return {
         TSFunction = {
             fg = palette.green,
@@ -466,11 +495,7 @@ M.load_plugin_syntax = function()
     }
 end
 
-M.get_palette = function()
-    return palette
-end
-
-M.setup = function()
+M.setup = function(palette)
     vim.cmd('hi clear')
     if vim.fn.exists('syntax_on') then
         vim.cmd('syntax reset')
@@ -478,7 +503,8 @@ M.setup = function()
     vim.o.background = 'dark'
     vim.o.termguicolors = true
     vim.g.colors_name = 'monokai'
-    local syntax = M.load_syntax()
+    local used_palette = palette or M.palette_monokai
+    local syntax = M.load_syntax(used_palette)
     for group, colors in pairs(syntax) do
         M.highlight(group, colors)
     end
@@ -486,7 +512,7 @@ M.setup = function()
     async_load_plugin = vim.loop.new_async(
         vim.schedule_wrap(
             function()
-                local plugin_syntax = M.load_plugin_syntax()
+                local plugin_syntax = M.load_plugin_syntax(used_palette)
                 for group, colors in pairs(plugin_syntax) do
                     M.highlight(group, colors)
                 end
