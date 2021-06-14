@@ -14,13 +14,13 @@ Neovim Nightly (0.5) is required for monokai.nvim to work.
 
 #### Via Plug:
 
-```
+```viml
 Plug 'tanvirtin/monokai.nvim'
 ```
 
 #### Via Packer:
 
-```
+```lua
 use 'tanvirtin/monokai.nvim'
 ```
 
@@ -28,7 +28,7 @@ use 'tanvirtin/monokai.nvim'
 
 In VimL:
 
-```vimscript
+```viml
 syntax on
 set termguicolors
 lua require('monokai').setup()
