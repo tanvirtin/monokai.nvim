@@ -32,17 +32,26 @@ In VimL:
 syntax on
 colorscheme monokai
 set termguicolors
-```
+``
 
 In Lua:
 
 ```lua
-require('monokai').setup()
+require('monokai')
+vim.cmd('colorscheme monokai')
 ```
 
-If you want to use colors from Monokai Pro, supply the included alternative palette in the `setup` function:
+If you want to use colors from Monokai Pro, simply specify the `monokai_pro` color scheme.
+
+```viml
+syntax on
+colorscheme monokai_pro
+set termguicolors
+```
+
+Or in Lua:
 
 ```lua
-local monokai = require('monokai')
-monokai.setup(monokai.pro)
+require('monokai')
+vim.cmd('colorscheme monokai_pro')
 ```
