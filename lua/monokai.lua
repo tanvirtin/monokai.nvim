@@ -3,6 +3,7 @@ local vim = vim
 local M = {}
 
 M.classic = {
+    name = 'monokai',
     base1 = '#272a30',
     base2 = '#26292C',
     base3 = '#2E323C',
@@ -32,29 +33,30 @@ M.classic = {
 }
 
 M.pro = {
-    base1 = '#272a30',
+    name = 'monokai_pro',
+    base1 = '#211F22',
     base2 = '#26292C',
     base3 = '#2E323C',
     base4 = '#333842',
     base5 = '#4d5154',
-    base6 = '#9ca0a4',
-    base7 = '#b1b1b1',
-    border = '#a1b5b1',
+    base6 = '#72696A',
+    base7 = '#B1B1B1',
+    border = '#A1B5B1',
     brown = "#504945",
     white = '#FFF1F3',
-    grey = '#8F908A',
+    grey = '#72696A',
     black = '#000000',
-    pink = '#FD6883',
-    green = '#ADDA78',
-    aqua = '#85DACC',
-    yellow = '#F9CC6C',
-    orange = '#F38D70',
-    purple = '#A8A9EB',
+    pink = '#FF6188',
+    green = '#A9DC76',
+    aqua = '#78DCE8',
+    yellow = '#FFD866',
+    orange = '#FC9867',
+    purple = '#AB9DF2',
     red = '#FD6883',
-    diff_add_fg = '#6a8f1f',
-    diff_add_bg = '#3d5213',
-    diff_remove_fg = '#4a0f23',
-    diff_remove_bg = '#a3214c',
+    diff_add_fg = '#6A8F1F',
+    diff_add_bg = '#3D5213',
+    diff_remove_fg = '#4A0F23',
+    diff_remove_bg = '#A3214C',
     diff_change_fg = '#7AA6DA',
     diff_change_bg = '#537196',
     none = 'NONE'
@@ -502,8 +504,8 @@ M.setup = function(palette)
     end
     vim.o.background = 'dark'
     vim.o.termguicolors = true
-    vim.g.colors_name = 'monokai'
     local used_palette = palette or M.classic
+    vim.g.colors_name = used_palette.name
     local syntax = M.load_syntax(used_palette)
     for group, colors in pairs(syntax) do
         M.highlight(group, colors)
