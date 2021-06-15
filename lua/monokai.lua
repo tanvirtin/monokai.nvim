@@ -2,7 +2,7 @@ local vim = vim
 
 local M = {}
 
-M.palette_regular = {
+M.classic = {
     base1 = '#272a30',
     base2 = '#26292C',
     base3 = '#2E323C',
@@ -31,7 +31,7 @@ M.palette_regular = {
     none = 'NONE'
 }
 
-M.palette_pro = {
+M.pro = {
     base1 = '#272a30',
     base2 = '#26292C',
     base3 = '#2E323C',
@@ -503,7 +503,7 @@ M.setup = function(palette)
     vim.o.background = 'dark'
     vim.o.termguicolors = true
     vim.g.colors_name = 'monokai'
-    local used_palette = palette or M.palette_regular
+    local used_palette = palette or M.classic
     local syntax = M.load_syntax(used_palette)
     for group, colors in pairs(syntax) do
         M.highlight(group, colors)

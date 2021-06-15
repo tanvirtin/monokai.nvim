@@ -44,5 +44,5 @@ If you want to use colors from Monokai Pro, supply the included alternative pale
 
 ```lua
 local monokai = require('monokai')
-monokai.setup(monokai.palette_pro)
+monokai.setup(monokai.pro)
 ```
