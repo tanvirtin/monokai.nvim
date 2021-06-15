@@ -1,1 +1,1 @@
-lua require('monokai')
+lua require('monokai').setup()
