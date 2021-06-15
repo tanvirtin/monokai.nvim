@@ -30,8 +30,8 @@ In VimL:
 
 ```viml
 syntax on
+colorscheme monokai
 set termguicolors
-lua require('monokai').setup()
 ```
 
 In Lua:
