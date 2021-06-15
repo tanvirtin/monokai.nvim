@@ -32,7 +32,7 @@ In VimL:
 syntax on
 colorscheme monokai
 set termguicolors
-``
+```
 
 In Lua:
 
@@ -49,7 +49,7 @@ colorscheme monokai_pro
 set termguicolors
 ```
 
-Or in Lua:
+...or in Lua:
 
 ```lua
 require('monokai')
