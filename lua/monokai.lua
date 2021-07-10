@@ -226,11 +226,11 @@ M.load_syntax = function(palette)
             fg = palette.diff_add_fg,
             bg = palette.diff_add_bg,
         },
-        DiffChange = {
+        DiffDelete = {
             fg = palette.diff_remove_fg,
             bg = palette.diff_remove_bg,
         },
-        DiffDelete = {
+        DiffChange = {
             fg = palette.diff_change_fg,
             bg = palette.diff_change_bg,
         },
