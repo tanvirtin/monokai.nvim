@@ -238,6 +238,12 @@ M.load_syntax = function(palette)
             fg = palette.black,
             bg = palette.aqua,
         },
+        diffAdded = {
+            fg = palette.green,
+        },
+        diffRemoved = {
+            fg = palette.pink,
+        },
         Folded = {
             fg = palette.grey,
             bg = palette.base3,
