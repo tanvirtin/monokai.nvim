@@ -295,7 +295,7 @@ M.load_syntax = function(palette)
             fg = palette.pink,
         },
         Label = {
-            fg = palette.yellow,
+            fg = palette.pink,
         },
         Keyword = {
             fg = palette.pink,
@@ -414,23 +414,122 @@ end
 
 M.load_plugin_syntax = function(palette)
     return {
+        TSString = {
+            fg = palette.yellow,
+        },
+        TSInclude = {
+            fg = palette.pink,
+        },
+        TSVariable = {
+            fg = palette.white,
+        },
+        TSVariableBuiltin = {
+            fg = palette.orange,
+        },
+        TSAnnotation = {
+            fg = palette.green,
+        },
+        TSComment = {
+            fg = palette.base6,
+        },
+        TSConstant = {
+            fg = palette.aqua,
+        },
+        TSConstBuiltin = {
+            fg = palette.purple,
+        },
+        TSConstMacro = {
+            fg = palette.purple,
+        },
+        TSConditional = {
+            fg = palette.pink,
+        },
+        TSCharacter = {
+            fg = palette.yellow,
+        },
         TSFunction = {
             fg = palette.green,
         },
-        TSMethod = {
+        TSFuncBuiltin = {
+            fg = palette.aqua,
+        },
+        TSFuncMacro = {
             fg = palette.green,
+        },
+        TSKeyword = {
+            fg = palette.pink,
         },
         TSKeywordFunction = {
             fg = palette.pink,
         },
-        TSProperty = {
+        TSKeywordOperator = {
+            fg = palette.pink,
+        },
+        TSKeywordReturn = {
+            fg = palette.pink,
+        },
+        TSMethod = {
+            fg = palette.green,
+        },
+        TSNamespace = {
+            fg = palette.purple,
+        },
+        TSNumber = {
+            fg = palette.purple,
+        },
+        TSOperator = {
+            fg = palette.pink,
+        },
+        TSParameter = {
             fg = palette.white,
+        },
+        TSParameterReference = {
+            fg = palette.white,
+        },
+        TSProperty = {
+            fg = palette.white
+        },
+        TSPunctDelimiter = {
+            fg = palette.white,
+        },
+        TSPunctBracket = {
+            fg = palette.white,
+        },
+        TSPunctSpecial = {
+            fg = palette.pink,
+        },
+        TSRepeat = {
+            fg = palette.pink,
+        },
+        TSStringRegex = {
+            fg = palette.purple,
+        },
+        TSStringEscape = {
+            fg = palette.purple,
+        },
+        TSTag = {
+            fg = palette.pink,
+        },
+        TSTagDelimiter = {
+            fg = palette.white,
+        },
+        TSTagAttribute = {
+            fg = palette.green,
+        },
+        TSLabel = {
+            fg = palette.pink,
         },
         TSType = {
             fg = palette.aqua,
         },
-        TSPunctBracket = {
-            fg = palette.white,
+        TSException = {
+            fg = palette.pink
+        },
+        TSField = {
+            fg = palette.white
+        },
+        TSFloat = {
+            fg = palette.purple
         },
         dbui_tables = {
             fg = palette.white,
