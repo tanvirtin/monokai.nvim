@@ -12,7 +12,7 @@ M.classic = {
     base6 = '#9ca0a4',
     base7 = '#b1b1b1',
     border = '#a1b5b1',
-    brown = "#504945",
+    brown = '#504945',
     white = '#f8f8f0',
     grey = '#8F908A',
     black = '#000000',
@@ -23,13 +23,11 @@ M.classic = {
     orange = '#fd971f',
     purple = '#ae81ff',
     red = '#e95678',
-    diff_add_fg = '#6a8f1f',
-    diff_add_bg = '#3d5213',
-    diff_remove_fg = '#4a0f23',
-    diff_remove_bg = '#a3214c',
-    diff_change_fg = '#7AA6DA',
-    diff_change_bg = '#537196',
-    none = 'NONE'
+    diff_add = '#3d5213',
+    diff_remove = '#4a0f23',
+    diff_change = '#27406b',
+    diff_text = '#23324d',
+    none = 'NONE',
 }
 
 M.pro = {
@@ -42,7 +40,7 @@ M.pro = {
     base6 = '#72696A',
     base7 = '#B1B1B1',
     border = '#A1B5B1',
-    brown = "#504945",
+    brown = '#504945',
     white = '#FFF1F3',
     grey = '#72696A',
     black = '#000000',
@@ -53,13 +51,11 @@ M.pro = {
     orange = '#FC9867',
     purple = '#AB9DF2',
     red = '#FD6883',
-    diff_add_fg = '#6A8F1F',
-    diff_add_bg = '#3D5213',
-    diff_remove_fg = '#4A0F23',
-    diff_remove_bg = '#A3214C',
-    diff_change_fg = '#7AA6DA',
-    diff_change_bg = '#537196',
-    none = 'NONE'
+    diff_add = '#3d5213',
+    diff_remove = '#4a0f23',
+    diff_change = '#27406b',
+    diff_text = '#23324d',
+    none = 'NONE',
 }
 
 M.highlight = function(group, color)
@@ -103,7 +99,7 @@ M.load_syntax = function(palette)
         Cursor = {
             fg = palette.none,
             bg = palette.none,
-            style = 'reverse'
+            style = 'reverse',
         },
         ColorColumn = {
             fg = palette.none,
@@ -166,7 +162,7 @@ M.load_syntax = function(palette)
         },
         LineNr = {
             fg = palette.base5,
-            bg = palette.base2
+            bg = palette.base2,
         },
         SignColumn = {
             fg = palette.white,
@@ -223,20 +219,16 @@ M.load_syntax = function(palette)
             bg = palette.none,
         },
         DiffAdd = {
-            fg = palette.diff_add_fg,
-            bg = palette.diff_add_bg,
+            bg = palette.diff_add,
         },
         DiffDelete = {
-            fg = palette.diff_remove_fg,
-            bg = palette.diff_remove_bg,
+            bg = palette.diff_remove,
         },
         DiffChange = {
-            fg = palette.diff_change_fg,
-            bg = palette.diff_change_bg,
+            bg = palette.diff_change,
         },
         DiffText = {
-            fg = palette.black,
-            bg = palette.aqua,
+            bg = palette.diff_text,
         },
         diffAdded = {
             fg = palette.green,
@@ -408,7 +400,7 @@ M.load_syntax = function(palette)
         },
         Exception = {
             fg = palette.pink,
-        }
+        },
     }
 end
 
@@ -487,7 +479,7 @@ M.load_plugin_syntax = function(palette)
             fg = palette.white,
         },
         TSProperty = {
-            fg = palette.white
+            fg = palette.white,
         },
         TSPunctDelimiter = {
             fg = palette.white,
@@ -523,13 +515,13 @@ M.load_plugin_syntax = function(palette)
             fg = palette.aqua,
         },
         TSException = {
-            fg = palette.pink
+            fg = palette.pink,
         },
         TSField = {
-            fg = palette.white
+            fg = palette.white,
         },
         TSFloat = {
-            fg = palette.purple
+            fg = palette.purple,
         },
         dbui_tables = {
             fg = palette.white,
@@ -594,11 +586,11 @@ M.load_plugin_syntax = function(palette)
             style = 'NONE',
         },
         TelescopeBorder = {
-            fg = palette.border
+            fg = palette.border,
         },
         TelescopePromptBorder = {
-            fg = palette.border
-        }
+            fg = palette.border,
+        },
     }
 end
 
@@ -616,17 +608,13 @@ M.setup = function(palette)
         M.highlight(group, colors)
     end
     local async_load_plugin = nil
-    async_load_plugin = vim.loop.new_async(
-        vim.schedule_wrap(
-            function()
-                local plugin_syntax = M.load_plugin_syntax(used_palette)
-                for group, colors in pairs(plugin_syntax) do
-                    M.highlight(group, colors)
-                end
-                async_load_plugin:close()
-            end
-        )
-    )
+    async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function()
+        local plugin_syntax = M.load_plugin_syntax(used_palette)
+        for group, colors in pairs(plugin_syntax) do
+            M.highlight(group, colors)
+        end
+        async_load_plugin:close()
+    end))
     async_load_plugin:send()
 end
 
