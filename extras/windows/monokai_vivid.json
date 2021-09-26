@@ -1,0 +1,23 @@
+{
+    "name": "Monokai Vivid",
+    "background": "#121212",
+    "black": "#121212",
+    "blue": "#0443FF",
+    "brightBlack": "#838383",
+    "brightBlue": "#0443FF",
+    "brightCyan": "#51CEFF",
+    "brightGreen": "#B1E05F",
+    "brightPurple": "#F200F6",
+    "brightRed": "#F6669D",
+    "brightWhite": "#FFFFFF",
+    "brightYellow": "#FFF26D",
+    "cursorColor": "#FFFFFF",
+    "cyan": "#01B6ED",
+    "foreground": "#F9F9F9",
+    "green": "#98E123",
+    "purple": "#F800F8",
+    "red": "#FA2934",
+    "selectionBackground": "#FFFFFF",
+    "white": "#FFFFFF",
+    "yellow": "#FFF30A"
+}

@@ -24,7 +24,7 @@ M.classic = {
     purple = '#ae81ff',
     red = '#e95678',
     diff_add = '#3d5213',
-    diff_remove = '#4a0f23',
+    diff_remove = '#690c2b',
     diff_change = '#27406b',
     diff_text = '#23324d',
 }
@@ -51,7 +51,7 @@ M.pro = {
     purple = '#AB9DF2',
     red = '#FD6883',
     diff_add = '#3d5213',
-    diff_remove = '#4a0f23',
+    diff_remove = '#690c2b',
     diff_change = '#27406b',
     diff_text = '#23324d',
 }
@@ -78,7 +78,7 @@ M.soda = {
     purple = '#9c64fe',
     red = '#f3005f',
     diff_add = '#3d5213',
-    diff_remove = '#4a0f23',
+    diff_remove = '#690c2b',
     diff_change = '#27406b',
     diff_text = '#23324d',
 }
@@ -184,11 +184,11 @@ M.load_syntax = function(palette)
         },
         StatusLine = {
             fg = palette.base7,
-            bg = palette.base2,
+            bg = palette.base3,
         },
         StatusLineNC = {
             fg = palette.grey,
-            bg = palette.base2,
+            bg = palette.base3,
         },
         Tabline = {},
         TabLineFill = {},

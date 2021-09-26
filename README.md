@@ -4,12 +4,12 @@ Monokai Theme for Neovim with tree-sitter support
 
 <img width="1792" alt="monokai nvim" src="https://user-images.githubusercontent.com/25164326/121434903-0562f180-c94c-11eb-952d-df702d92fe25.png">
 
-## Supported Monokai Flavours (colorscheme alias)
+## Supported Monokai Flavours
 - Monokai (monokai)
 - Monokai Pro (monokai_pro)
 - Monokai Soda (monokai_soda)
 
-## Prerequisites:
+## Prerequisites
 
 Neovim >= 0.5.
 
@@ -23,7 +23,7 @@ Neovim >= 0.5.
 | [Pathogen](https://github.com/tpope/vim-pathogen)    | `git clone https://github.com/tanvirtin/monokai.nvim.git ~/.vim/bundle/monokai.nvim` |
 | [Dein](https://github.com/Shougo/dein.vim)           | `call dein#add('tanvirtin/monokai.nvim')`                                            |
 
-## Usage:
+## Usage
 
 In VimL:
 

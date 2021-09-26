@@ -1,0 +1,23 @@
+{
+    "name": "Monokai Dimmed",
+    "background": "#1F1F1F",
+    "black": "#3A3D43",
+    "blue": "#4F76A1",
+    "brightBlack": "#888987",
+    "brightBlue": "#186DE3",
+    "brightCyan": "#2E706D",
+    "brightGreen": "#0F722F",
+    "brightPurple": "#FB0067",
+    "brightRed": "#FB001F",
+    "brightWhite": "#FDFFB9",
+    "brightYellow": "#C47033",
+    "cursorColor": "#FFFFFF",
+    "cyan": "#578FA4",
+    "foreground": "#B9BCBA",
+    "green": "#879A3B",
+    "purple": "#855C8D",
+    "red": "#BE3F48",
+    "selectionBackground": "#FFFFFF",
+    "white": "#B9BCBA",
+    "yellow": "#C5A635"
+}

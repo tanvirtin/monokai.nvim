@@ -1,0 +1,23 @@
+{
+    "name": "Monokai Soda",
+    "background": "#121212",
+    "black": "#1A1A1A",
+    "blue": "#9D65FF",
+    "brightBlack": "#625E4C",
+    "brightBlue": "#9D65FF",
+    "brightCyan": "#58D1EB",
+    "brightGreen": "#98E024",
+    "brightPurple": "#F4005F",
+    "brightRed": "#F4005F",
+    "brightWhite": "#F6F6EF",
+    "brightYellow": "#E0D561",
+    "cursorColor": "#FFFFFF",
+    "cyan": "#58D1EB",
+    "foreground": "#C4C5B5",
+    "green": "#98E024",
+    "purple": "#F4005F",
+    "red": "#F4005F",
+    "selectionBackground": "#FFFFFF",
+    "white": "#C4C5B5",
+    "yellow": "#FA8419"
+}

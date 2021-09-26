@@ -1,0 +1,23 @@
+{
+    "name": "Monokai Cmder",
+    "background": "#272822",
+    "black": "#272822",
+    "blue": "#01549E",
+    "brightBlack": "#7C7C7C",
+    "brightBlue": "#0383F5",
+    "brightCyan": "#58C2E5",
+    "brightGreen": "#8DD006",
+    "brightPurple": "#A87DB8",
+    "brightRed": "#F3044B",
+    "brightWhite": "#FFFFFF",
+    "brightYellow": "#CCCC81",
+    "cursorColor": "#FFFFFF",
+    "cyan": "#1A83A6",
+    "foreground": "#CACACA",
+    "green": "#74AA04",
+    "purple": "#89569C",
+    "red": "#A70334",
+    "selectionBackground": "#CCCC81",
+    "white": "#CACACA",
+    "yellow": "#B6B649"
+}
