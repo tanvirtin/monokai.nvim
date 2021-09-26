@@ -39,3 +39,7 @@ In Lua:
 require('monokai')
 vim.cmd('colorscheme monokai')
 ```
+
+## Extras
+
+Extra color configs for **Kitty**, **Alacritty**, **Windows Terminal**, can be found in [extras](extras/). To use them, refer to their respective documentation.
