@@ -1,1 +1,1 @@
-lua require('monokai').setup(require('monokai').pro)
+lua require('monokai').setup { palette = require('monokai').pro }
