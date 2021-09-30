@@ -524,43 +524,43 @@ M.load_plugin_syntax = function(palette)
         dbui_tables = {
             fg = palette.white,
         },
-        LspDiagnosticsSignError = {
+        DiagnosticSignError = {
             fg = palette.red,
         },
-        LspDiagnosticsSignWarning = {
+        DiagnosticSignWarn = {
             fg = palette.yellow,
         },
-        LspDiagnosticsSignInformation = {
+        DiagnosticSignInfo = {
             fg = palette.white,
         },
-        LspDiagnosticsSignHint = {
+        DiagnosticSignHint = {
             fg = palette.aqua,
         },
-        LspDiagnosticsVirtualTextError = {
+        DiagnosticVirtualTextError = {
             fg = palette.red,
         },
-        LspDiagnosticsVirtualTextWarning = {
+        DiagnosticVirtualTextWarn = {
             fg = palette.yellow,
         },
-        LspDiagnosticsVirtualTextInformation = {
+        DiagnosticVirtualTextInfo = {
             fg = palette.white,
         },
-        LspDiagnosticsVirtualTextHint = {
+        DiagnosticVirtualTextHint = {
             fg = palette.aqua,
         },
-        LspDiagnosticsUnderlineError = {
+        DiagnosticUnderlineError = {
             style = 'undercurl',
             sp = palette.red,
         },
-        LspDiagnosticsUnderlineWarning = {
+        DiagnosticUnderlineWarn = {
             style = 'undercurl',
             sp = palette.yellow,
         },
-        LspDiagnosticsUnderlineInformation = {
+        DiagnosticUnderlineInfo = {
             style = 'undercurl',
             sp = palette.white,
         },
-        LspDiagnosticsUnderlineHint = {
+        DiagnosticUnderlineHint = {
             style = 'undercurl',
             sp = palette.aqua,
         },
