@@ -145,7 +145,7 @@ M.load_syntax = function(palette)
     },
     IncSearch = {
       fg = palette.base2,
-      bg = palette.yellow,
+      bg = palette.orange,
     },
     CursorLineNr = {
       fg = palette.orange,
