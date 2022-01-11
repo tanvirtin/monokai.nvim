@@ -130,7 +130,7 @@ M.load_syntax = function(palette)
     CursorLine = {
       bg = palette.base3,
     },
-    NonText = {
+    NonText = { -- used for "eol", "extends" and "precedes" in listchars
       fg = palette.base5,
     },
     Visual = {
@@ -369,8 +369,8 @@ M.load_syntax = function(palette)
     CursorColumn = {
       bg = palette.base3,
     },
-    Whitespace = {
-      fg = palette.base3,
+    Whitespace = { -- used for "nbsp", "space", "tab" and "trail" in listchars
+      fg = palette.base5,
     },
     WildMenu = {
       fg = palette.white,
