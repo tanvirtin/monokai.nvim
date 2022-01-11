@@ -83,14 +83,33 @@ M.soda = {
   diff_text = '#23324d',
 }
 
-M.highlight = function(group, color)
-  local style = color.style and 'gui=' .. color.style or 'gui=NONE'
-  local fg = color.fg and 'guifg = ' .. color.fg or 'guifg = NONE'
-  local bg = color.bg and 'guibg = ' .. color.bg or 'guibg = NONE'
-  local sp = color.sp and 'guisp = ' .. color.sp or ''
-  vim.cmd(
-    'highlight ' .. group .. ' ' .. style .. ' ' .. fg .. ' ' .. bg .. ' ' .. sp
-  )
+local function maybe_remove_italics(config, colors)
+  if not config.italics and colors.style == 'italic' then
+    colors.style = nil
+  end
+  return colors
+end
+
+local function highlighter(config)
+  return function(group, color)
+    color = maybe_remove_italics(config, color)
+    local style = color.style and 'gui=' .. color.style or 'gui=NONE'
+    local fg = color.fg and 'guifg = ' .. color.fg or 'guifg = NONE'
+    local bg = color.bg and 'guibg = ' .. color.bg or 'guibg = NONE'
+    local sp = color.sp and 'guisp = ' .. color.sp or ''
+    vim.cmd(
+      'highlight '
+        .. group
+        .. ' '
+        .. style
+        .. ' '
+        .. fg
+        .. ' '
+        .. bg
+        .. ' '
+        .. sp
+    )
+  end
 end
 
 M.load_syntax = function(palette)
@@ -635,6 +654,7 @@ end
 local default_config = {
   palette = M.classic,
   custom_hlgroups = {},
+  italics = true,
 }
 
 M.setup = function(config)
@@ -650,8 +670,9 @@ M.setup = function(config)
   vim.g.colors_name = used_palette.name
   local syntax = M.load_syntax(used_palette)
   syntax = vim.tbl_deep_extend('keep', config.custom_hlgroups, syntax)
+  local highlight = highlighter(config)
   for group, colors in pairs(syntax) do
-    M.highlight(group, colors)
+    highlight(group, colors)
   end
   local async_load_plugin = nil
   async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function()
@@ -662,7 +683,7 @@ M.setup = function(config)
       plugin_syntax
     )
     for group, colors in pairs(plugin_syntax) do
-      M.highlight(group, colors)
+      highlight(group, colors)
     end
     async_load_plugin:close()
   end))
