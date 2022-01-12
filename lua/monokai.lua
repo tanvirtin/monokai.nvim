@@ -435,6 +435,9 @@ M.load_plugin_syntax = function(palette)
     TSConstMacro = {
       fg = palette.purple,
     },
+    TSConstructor = {
+      fg = palette.purple,
+    },
     TSConditional = {
       fg = palette.pink,
     },
