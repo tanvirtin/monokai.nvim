@@ -4,6 +4,7 @@ local M = {}
 
 M.classic = {
   name = 'monokai',
+  base0 = '#222426',
   base1 = '#272a30',
   base2 = '#26292C',
   base3 = '#2E323C',
@@ -11,6 +12,7 @@ M.classic = {
   base5 = '#4d5154',
   base6 = '#9ca0a4',
   base7 = '#b1b1b1',
+  base8 = '#e3e3e1',
   border = '#a1b5b1',
   brown = '#504945',
   white = '#f8f8f0',
@@ -31,6 +33,7 @@ M.classic = {
 
 M.pro = {
   name = 'monokai_pro',
+  base0 = '#222426',
   base1 = '#211F22',
   base2 = '#26292C',
   base3 = '#2E323C',
@@ -38,6 +41,7 @@ M.pro = {
   base5 = '#4d5154',
   base6 = '#72696A',
   base7 = '#B1B1B1',
+  base8 = '#e3e3e1',
   border = '#A1B5B1',
   brown = '#504945',
   white = '#FFF1F3',
@@ -58,6 +62,7 @@ M.pro = {
 
 M.soda = {
   name = 'monokai_soda',
+  base0 = '#222426',
   base1 = '#211F22',
   base2 = '#26292C',
   base3 = '#2E323C',
@@ -65,6 +70,7 @@ M.soda = {
   base5 = '#4d5154',
   base6 = '#72696A',
   base7 = '#B1B1B1',
+  base8 = '#e3e3e1',
   border = '#A1B5B1',
   brown = '#504945',
   white = '#f6f6ec',
@@ -584,11 +590,27 @@ M.load_plugin_syntax = function(palette)
       fg = palette.white,
       style = 'NONE',
     },
+
+    -- Telescope
     TelescopeBorder = {
-      fg = palette.border,
+      fg = palette.base7,
     },
-    TelescopePromptBorder = {
-      fg = palette.border,
+    TelescopeNormal = {
+      fg = palette.base8,
+      bg = palette.base0,
+    },
+    TelescopeSelection = {
+      fg = palette.white,
+      style = 'bold',
+    },
+    TelescopeSelectionCaret = {
+      fg = palette.green,
+    },
+    TelescopeMultiSelection = {
+      fg = palette.pink,
+    },
+    TelescopeMatching = {
+      fg = palette.aqua,
     },
 
     -- hrsh7th/nvim-cmp
@@ -653,20 +675,15 @@ M.setup = function(config)
   for group, colors in pairs(syntax) do
     M.highlight(group, colors)
   end
-  local async_load_plugin = nil
-  async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function()
-    local plugin_syntax = M.load_plugin_syntax(used_palette)
-    plugin_syntax = vim.tbl_deep_extend(
-      'keep',
-      config.custom_hlgroups,
-      plugin_syntax
-    )
-    for group, colors in pairs(plugin_syntax) do
-      M.highlight(group, colors)
-    end
-    async_load_plugin:close()
-  end))
-  async_load_plugin:send()
+  local plugin_syntax = M.load_plugin_syntax(used_palette)
+  plugin_syntax = vim.tbl_deep_extend(
+    'keep',
+    config.custom_hlgroups,
+    plugin_syntax
+  )
+  for group, colors in pairs(plugin_syntax) do
+    M.highlight(group, colors)
+  end
 end
 
 return M
