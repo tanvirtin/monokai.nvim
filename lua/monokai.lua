@@ -89,7 +89,6 @@ M.soda = {
   diff_text = '#23324d',
 }
 
-
 M.ristretto = {
   name = 'monokai_ristretto',
   base0 = '#191515',
@@ -466,7 +465,7 @@ M.load_plugin_syntax = function(palette)
       fg = palette.purple,
     },
     TSConstructor = {
-      fg = palette.purple,
+      fg = palette.aqua,
     },
     TSConditional = {
       fg = palette.pink,

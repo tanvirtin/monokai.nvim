@@ -8,6 +8,7 @@ Monokai Theme for Neovim with tree-sitter support
 - Monokai (monokai)
 - Monokai Pro (monokai_pro)
 - Monokai Soda (monokai_soda)
+- Monokai Ristretto (monokai_ristretto)
 
 ## Prerequisites
 
@@ -32,6 +33,7 @@ syntax on
 colorscheme monokai
 colorscheme monokai_pro
 colorscheme monokai_soda
+colorscheme monokai_ristretto
 ```
 
 In Lua:
