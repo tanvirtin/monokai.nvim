@@ -112,9 +112,9 @@ M.ristretto = {
   orange = '#f38d70',
   purple = '#a8a9eb',
   red = '#fd6883',
-  diff_add = '#adda78',
-  diff_remove = '#fd6883',
-  diff_change = '#85dacc',
+  diff_add = '#527728',
+  diff_remove = '#842335',
+  diff_change = '#247c6e',
   diff_text = '#23324d',
 }
 
