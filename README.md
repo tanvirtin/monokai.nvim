@@ -110,6 +110,12 @@ monokai.setup {
 }
 ```
 
+With `italics` option (`true` by default), you can disable italic used by default in style for some groups (`Function`, `Keyword`, `Comment`...).
+
+```
+require('monokai').setup { italics = false }
+```
+
 ## Extras
 
 Extra color configs for **Kitty**, **Alacritty**, **Windows Terminal**, can be found in [extras](extras/). To use them, refer to their respective documentation.
