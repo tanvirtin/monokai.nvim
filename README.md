@@ -12,7 +12,7 @@ Monokai Theme for Neovim with tree-sitter support
 
 ## Prerequisites
 
-Neovim >= 0.5.
+Neovim >= 0.7.
 
 ## Installation
 | Plugin Manager                                       | Command                                                                              |
