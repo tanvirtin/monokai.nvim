@@ -532,7 +532,7 @@ M.load_plugin_syntax = function(palette)
     ["@punct.delimiter"] = {
       fg = palette.white,
     },
-    ["@punct.bracket"] = {
+    ["@punctuation.bracket"] = {
       fg = palette.white,
     },
     ["@punct.special"] = {
