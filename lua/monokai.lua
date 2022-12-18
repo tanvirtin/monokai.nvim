@@ -529,7 +529,7 @@ M.load_plugin_syntax = function(palette)
     ["@property"] = {
       fg = palette.white,
     },
-    ["@punct.delimiter"] = {
+    ["@punctuation.delimiter"] = {
       fg = palette.white,
     },
     ["@punctuation.bracket"] = {
