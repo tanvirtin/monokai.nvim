@@ -490,7 +490,7 @@ M.load_plugin_syntax = function(palette)
     ["@function.builtin"] = {
       fg = palette.aqua,
     },
-    ["@func.macro"] = {
+    ["@function.macro"] = {
       fg = palette.green,
       style = 'italic',
     },
