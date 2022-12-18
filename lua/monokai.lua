@@ -535,7 +535,7 @@ M.load_plugin_syntax = function(palette)
     ["@punctuation.bracket"] = {
       fg = palette.white,
     },
-    ["@punct.special"] = {
+    ["@punctuation.special"] = {
       fg = palette.pink,
     },
     ["@repeat"] = {
