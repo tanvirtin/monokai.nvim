@@ -118,23 +118,12 @@ M.ristretto = {
   diff_text = '#23324d',
 }
 
-local function remove_italics(config, colors)
-  if not config.italics and colors.style == 'italic' then
-    colors.style = nil
-  end
-  return colors
-end
-
 local function highlighter(config)
-  return function(group, color)
-    color = remove_italics(config, color)
-    local style = color.style and 'gui=' .. color.style or 'gui=NONE'
-    local fg = color.fg and 'guifg = ' .. color.fg or 'guifg = NONE'
-    local bg = color.bg and 'guibg = ' .. color.bg or 'guibg = NONE'
-    local sp = color.sp and 'guisp = ' .. color.sp or ''
-  vim.cmd(
-    'highlight ' .. group .. ' ' .. style .. ' ' .. fg .. ' ' .. bg .. ' ' .. sp
-  )
+  return function(group, val)
+    if not config.italics then
+        val.italic = false
+    end
+    vim.api.nvim_set_hl(0, group, val)
   end
 end
 
@@ -167,7 +156,7 @@ M.load_syntax = function(palette)
       bg = palette.base3,
     },
     Cursor = {
-      style = 'reverse',
+      reverse=true,
     },
     ColorColumn = {
       bg = palette.base3,
@@ -204,19 +193,19 @@ M.load_syntax = function(palette)
     },
     ModeMsg = {
       fg = palette.white,
-      style = 'bold',
+      bold = true,
     },
     MoreMsg = {
       fg = palette.white,
-      style = 'bold',
+      bold = true,
     },
     ErrorMsg = {
       fg = palette.red,
-      style = 'bold',
+      bold = true,
     },
     WarningMsg = {
       fg = palette.yellow,
-      style = 'bold',
+      bold = true,
     },
     VertSplit = {
       fg = palette.brown,
@@ -244,26 +233,26 @@ M.load_syntax = function(palette)
     },
     SpellBad = {
       fg = palette.red,
-      style = 'undercurl',
+      undercurl = true,
     },
     SpellCap = {
       fg = palette.purple,
-      style = 'undercurl',
+      undercurl = true,
     },
     SpellRare = {
       fg = palette.aqua,
-      style = 'undercurl',
+      undercurl = true,
     },
     SpellLocal = {
       fg = palette.pink,
-      style = 'undercurl',
+      undercurl = true,
     },
     SpecialKey = {
       fg = palette.pink,
     },
     Title = {
       fg = palette.yellow,
-      style = 'bold',
+      bold = true,
     },
     Directory = {
       fg = palette.aqua,
@@ -329,7 +318,7 @@ M.load_syntax = function(palette)
     },
     Function = {
       fg = palette.green,
-      style = 'italic',
+      italic = true,
     },
     Statement = {
       fg = palette.pink,
@@ -342,7 +331,7 @@ M.load_syntax = function(palette)
     },
     Keyword = {
       fg = palette.pink,
-      style = 'italic',
+      italic = true,
     },
     PreProc = {
       fg = palette.green,
@@ -370,7 +359,7 @@ M.load_syntax = function(palette)
     },
     SpecialComment = {
       fg = palette.grey,
-      style = 'italic',
+      italic = true,
     },
     Tag = {
       fg = palette.orange,
@@ -380,10 +369,10 @@ M.load_syntax = function(palette)
     },
     Comment = {
       fg = palette.base6,
-      style = 'italic',
+      italic = true,
     },
     Underlined = {
-      style = 'underline',
+      underline = true,
     },
     Ignore = {},
     Error = {
@@ -400,16 +389,16 @@ M.load_syntax = function(palette)
       fg = palette.grey,
     },
     vCursor = {
-      style = 'reverse',
+      reverse = true,
     },
     iCursor = {
-      style = 'reverse',
+      reverse = true,
     },
     lCursor = {
-      style = 'reverse',
+      reverse = true,
     },
     CursorIM = {
-      style = 'reverse',
+      reverse = true,
     },
     CursorColumn = {
       bg = palette.base3,
@@ -423,7 +412,7 @@ M.load_syntax = function(palette)
     },
     QuickFixLine = {
       fg = palette.purple,
-      style = 'bold',
+      bold = true,
     },
     Debug = {
       fg = palette.orange,
@@ -463,7 +452,7 @@ M.load_plugin_syntax = function(palette)
     },
     ["@comment"] = {
       fg = palette.base6,
-      style = 'italic',
+      italic = true,
     },
     ["@constant"] = {
       fg = palette.aqua,
@@ -485,22 +474,22 @@ M.load_plugin_syntax = function(palette)
     },
     ["@function"] = {
       fg = palette.green,
-      style = 'italic',
+      italic = true,
     },
     ["@function.builtin"] = {
       fg = palette.aqua,
     },
     ["@function.macro"] = {
       fg = palette.green,
-      style = 'italic',
+      italic = true,
     },
     ["@keyword"] = {
       fg = palette.pink,
-      style = 'italic',
+      italic = true,
     },
     ["@keyword.function"] = {
       fg = palette.pink,
-      style = 'italic',
+      italic = true,
     },
     ["@keyword.operator"] = {
       fg = palette.pink,
@@ -599,19 +588,19 @@ M.load_plugin_syntax = function(palette)
       fg = palette.aqua,
     },
     DiagnosticUnderlineError = {
-      style = 'undercurl',
+      undercurl=true,
       sp = palette.red,
     },
     DiagnosticUnderlineWarn = {
-      style = 'undercurl',
+      undercurl=true,
       sp = palette.yellow,
     },
     DiagnosticUnderlineInfo = {
-      style = 'undercurl',
+      undercurl=true,
       sp = palette.white,
     },
     DiagnosticUnderlineHint = {
-      style = 'undercurl',
+      undercurl=true,
       sp = palette.aqua,
     },
     CursorWord0 = {
@@ -630,7 +619,6 @@ M.load_plugin_syntax = function(palette)
     },
     NvimTreeSpecialFile = {
       fg = palette.white,
-      style = 'NONE',
     },
 
     -- Telescope
@@ -643,7 +631,7 @@ M.load_plugin_syntax = function(palette)
     },
     TelescopeSelection = {
       fg = palette.white,
-      style = 'bold',
+      bold=true,
     },
     TelescopeSelectionCaret = {
       fg = palette.green,
@@ -716,6 +704,9 @@ M.setup = function(config)
   local syntax = M.load_syntax(used_palette)
   syntax = vim.tbl_deep_extend('keep', config.custom_hlgroups, syntax)
   local highlight = highlighter(config)
+  -- https://github.com/neovim/neovim/issues/20008#issue-1355604714
+  -- normal must be defined first so that bg/fg can work
+  highlight('Normal', syntax['Normal'])
   for group, colors in pairs(syntax) do
     highlight(group, colors)
   end
