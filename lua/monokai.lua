@@ -536,7 +536,7 @@ M.load_plugin_syntax = function(palette)
       fg = palette.white,
     },
     ["@definition.parameter"] = {
-      fg = palette.white,
+      fg = palette.orange,
     },
     ["@definition.type"] = {
       fg = palette.green,
@@ -608,7 +608,7 @@ M.load_plugin_syntax = function(palette)
       fg = palette.pink,
     },
     ["@parameter"] = {
-      fg = palette.white,
+      fg = palette.orange,
     },
     ["@parameter.reference"] = {
       fg = palette.white,
