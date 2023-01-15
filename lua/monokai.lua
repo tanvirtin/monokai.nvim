@@ -446,27 +446,18 @@ end
 
 M.load_plugin_syntax = function(palette)
   return {
-    ["@string"] = {
-      fg = palette.yellow,
-    },
-    ["@include"] = {
-      fg = palette.pink,
-    },
-    ["@variable"] = {
-      fg = palette.white,
-    },
-    ["@variable.builtin"] = {
-      fg = palette.orange,
-    },
     ["@annotation"] = {
       fg = palette.green,
+    },
+    ["@character"] = {
+      fg = palette.yellow,
     },
     ["@comment"] = {
       fg = palette.base6,
       style = 'italic',
     },
-    ["@constant"] = {
-      fg = palette.aqua,
+    ["@conditional"] = {
+      fg = palette.pink,
     },
     ["@const.builtin"] = {
       fg = palette.purple,
@@ -474,14 +465,20 @@ M.load_plugin_syntax = function(palette)
     ["@const.macro"] = {
       fg = palette.purple,
     },
+    ["@constant"] = {
+      fg = palette.aqua,
+    },
     ["@constructor"] = {
       fg = palette.aqua,
     },
-    ["@conditional"] = {
+    ["@exception"] = {
       fg = palette.pink,
     },
-    ["@character"] = {
-      fg = palette.yellow,
+    ["@field"] = {
+      fg = palette.white,
+    },
+    ["@float"] = {
+      fg = palette.purple,
     },
     ["@function"] = {
       fg = palette.green,
@@ -493,6 +490,9 @@ M.load_plugin_syntax = function(palette)
     ["@function.macro"] = {
       fg = palette.green,
       style = 'italic',
+    },
+    ["@include"] = {
+      fg = palette.pink,
     },
     ["@keyword"] = {
       fg = palette.pink,
@@ -506,6 +506,9 @@ M.load_plugin_syntax = function(palette)
       fg = palette.pink,
     },
     ["@keyword.return"] = {
+      fg = palette.pink,
+    },
+    ["@label"] = {
       fg = palette.pink,
     },
     ["@method"] = {
@@ -529,10 +532,10 @@ M.load_plugin_syntax = function(palette)
     ["@property"] = {
       fg = palette.white,
     },
-    ["@punctuation.delimiter"] = {
+    ["@punctuation.bracket"] = {
       fg = palette.white,
     },
-    ["@punctuation.bracket"] = {
+    ["@punctuation.delimiter"] = {
       fg = palette.white,
     },
     ["@punctuation.special"] = {
@@ -541,35 +544,32 @@ M.load_plugin_syntax = function(palette)
     ["@repeat"] = {
       fg = palette.pink,
     },
-    ["@string.regex"] = {
-      fg = palette.purple,
+    ["@string"] = {
+      fg = palette.yellow,
     },
     ["@string.escape"] = {
+      fg = palette.purple,
+    },
+    ["@string.regex"] = {
       fg = palette.purple,
     },
     ["@tag"] = {
       fg = palette.pink,
     },
-    ["@tag.delimiter"] = {
-      fg = palette.white,
-    },
     ["@tag.attribute"] = {
       fg = palette.green,
     },
-    ["@label"] = {
-      fg = palette.pink,
+    ["@tag.delimiter"] =  {
+      fg = palette.white,
     },
     ["@type"] = {
       fg = palette.aqua,
     },
-    ["@exception"] = {
-      fg = palette.pink,
-    },
-    ["@field"] = {
+    ["@variable"] = {
       fg = palette.white,
     },
-    ["@float"] = {
-      fg = palette.purple,
+    ["@variable.builtin"] = {
+      fg = palette.orange,
     },
     dbui_tables = {
       fg = palette.white,
