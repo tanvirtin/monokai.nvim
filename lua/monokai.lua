@@ -445,43 +445,116 @@ M.load_syntax = function(palette)
 end
 
 M.load_plugin_syntax = function(palette)
+  local math_group = {
+    fg = palette.yellow,
+  }
+  local strike_group = {
+    fg = palette.grey,
+  }
+  local todo_group = {
+    fg = palette.aqua,
+  }
+  local uri_group = {
+    fg = palette.aqua,
+    style = 'underline',
+  }
   return {
-    ["@string"] = {
-      fg = palette.yellow,
-    },
-    ["@include"] = {
-      fg = palette.pink,
-    },
-    ["@variable"] = {
-      fg = palette.white,
-    },
-    ["@variable.builtin"] = {
-      fg = palette.orange,
-    },
     ["@annotation"] = {
       fg = palette.green,
+    },
+    ["@attribute"] = {
+      fg = palette.green,
+    },
+    ["@boolean"] = {
+      fg = palette.purple,
+    },
+    ["@character"] = {
+      fg = palette.yellow,
+    },
+    ["@character.special"] = {
+      fg = palette.purple,
     },
     ["@comment"] = {
       fg = palette.base6,
       style = 'italic',
     },
+    ["@conceal"] = {
+      fg = palette.grey,
+    },
+    ["@conditional"] = {
+      fg = palette.pink,
+    },
+    ["@conditional.ternary"] = {
+      fg = palette.pink,
+    },
     ["@constant"] = {
       fg = palette.aqua,
     },
-    ["@const.builtin"] = {
+    ["@constant.builtin"] = {
       fg = palette.purple,
     },
-    ["@const.macro"] = {
+    ["@constant.macro"] = {
       fg = palette.purple,
     },
     ["@constructor"] = {
       fg = palette.aqua,
     },
-    ["@conditional"] = {
+    ["@debug"] = {
       fg = palette.pink,
     },
-    ["@character"] = {
-      fg = palette.yellow,
+    ["@define"] = {
+      fg = palette.aqua,
+    },
+    ["@definition"] = {
+      fg = palette.green,
+    },
+    ["@definition.associated"] = {
+      fg = palette.green,
+    },
+    ["@definition.constant"] = {
+      fg = palette.green,
+    },
+    ["@definition.enum"] = {
+      fg = palette.green,
+    },
+    ["@definition.field"] = {
+      fg = palette.green,
+    },
+    ["@definition.function"] = {
+      fg = palette.green,
+    },
+    ["@definition.import"] = {
+      fg = palette.white,
+    },
+    ["@definition.macro"] = {
+      fg = palette.green,
+    },
+    ["@definition.method"] = {
+      fg = palette.green,
+    },
+    ["@definition.namespace"] = {
+      fg = palette.white,
+    },
+    ["@definition.parameter"] = {
+      fg = palette.white,
+    },
+    ["@definition.type"] = {
+      fg = palette.green,
+    },
+    ["@definition.var"] = {
+      fg = palette.green,
+    },
+    ["@error"] = {
+      fg = palette.red,
+    },
+    ["@exception"] = {
+      fg = palette.pink,
+    },
+    ["@field"] = {
+      fg = palette.white,
+    },
+    ["@float"] = {
+      fg = palette.purple,
     },
     ["@function"] = {
       fg = palette.green,
@@ -490,9 +563,15 @@ M.load_plugin_syntax = function(palette)
     ["@function.builtin"] = {
       fg = palette.aqua,
     },
+    ["@function.call"] = {
+      fg = palette.white,
+    },
     ["@function.macro"] = {
       fg = palette.green,
       style = 'italic',
+    },
+    ["@include"] = {
+      fg = palette.pink,
     },
     ["@keyword"] = {
       fg = palette.pink,
@@ -508,12 +587,20 @@ M.load_plugin_syntax = function(palette)
     ["@keyword.return"] = {
       fg = palette.pink,
     },
+    ["@label"] = {
+      fg = palette.pink,
+    },
+    ["@math"] = math_group,
     ["@method"] = {
       fg = palette.green,
+    },
+    ["@method.call"] = {
+      fg = palette.white,
     },
     ["@namespace"] = {
       fg = palette.purple,
     },
+    -- ["@nospell"] = {},
     ["@number"] = {
       fg = palette.purple,
     },
@@ -526,50 +613,135 @@ M.load_plugin_syntax = function(palette)
     ["@parameter.reference"] = {
       fg = palette.white,
     },
-    ["@property"] = {
-      fg = palette.white,
+    ["@preproc"] = {
+      fg = palette.green,
     },
-    ["@punctuation.delimiter"] = {
+    ["@property"] = {
       fg = palette.white,
     },
     ["@punctuation.bracket"] = {
       fg = palette.white,
     },
+    ["@punctuation.delimiter"] = {
+      fg = palette.white,
+    },
     ["@punctuation.special"] = {
       fg = palette.pink,
+    },
+    ["@reference"] = {
+      fg = palette.white,
     },
     ["@repeat"] = {
       fg = palette.pink,
     },
+    ["@scope"] = {
+      fg = palette.white,
+    },
+    -- ["@spell"] = {},
+    ["@storageclass"] = {
+      fg = palette.aqua,
+    },
+    ["@storageclass.lifetime"] = {
+      fg = palette.aqua,
+    },
+    ["@strike"] = strike_group,
+    ["@string"] = {
+      fg = palette.yellow,
+    },
+    ["@string.escape"] = {
+      fg = palette.purple,
+    },
     ["@string.regex"] = {
       fg = palette.purple,
     },
-    ["@string.escape"] = {
+    ["@string.special"] = {
+      fg = palette.purple,
+    },
+    ["@symbol"] = {
       fg = palette.purple,
     },
     ["@tag"] = {
       fg = palette.pink,
     },
-    ["@tag.delimiter"] = {
-      fg = palette.white,
-    },
     ["@tag.attribute"] = {
       fg = palette.green,
     },
-    ["@label"] = {
-      fg = palette.pink,
+    ["@tag.delimiter"] =  {
+      fg = palette.white,
     },
+    ["@text"] = {
+      fg = palette.green,
+    },
+    ["@text.danger"] = {
+      fg = palette.red,
+      style = 'bold',
+    },
+    ["@text.diff.add"] = {
+      fg = palette.diff_add,
+    },
+    ["@text.diff.delete"] = {
+      fg = palette.diff_remove,
+    },
+    ["@text.emphasis"] = {
+      style = 'bold',
+    },
+    ["@text.environment"] = {
+      fg = palette.purple,
+    },
+    ["@text.environment.name"] = {
+      fg = palette.aqua,
+    },
+    ["@text.literal"] = {
+      fg = palette.yellow,
+    },
+    ["@text.math"] = math_group,
+    ["@text.note"] = {
+      fg = palette.aqua,
+      style = 'bold',
+    },
+    ["@text.quote"] = {
+      fg = palette.grey,
+    },
+    ["@text.reference"] = {
+      fg = palette.orange,
+      style = 'italic',
+    },
+    ["@text.strike"] = strike_group,
+    ["@text.strong"] = {
+      style = 'bold',
+    },
+    ["@text.title"] = {
+      fg = palette.yellow,
+      style = 'bold',
+    },
+    ["@text.todo"] = todo_group,
+    ["@text.underline"] = {
+      style = 'underline',
+    },
+    ["@text.uri"] = uri_group,
+    ["@text.warning"] = {
+      fg = palette.yellow,
+      style = 'bold',
+    },
+    ["@todo"] = todo_group,
     ["@type"] = {
       fg = palette.aqua,
     },
-    ["@exception"] = {
+    ["@type.builtin"] = {
+      fg = palette.aqua,
+    },
+    ["@type.definition"] = {
+      fg = palette.aqua,
+    },
+    ["@type.qualifier"] = {
       fg = palette.pink,
     },
-    ["@field"] = {
+    ["@uri"] = uri_group,
+    ["@variable"] = {
       fg = palette.white,
     },
-    ["@float"] = {
-      fg = palette.purple,
+    ["@variable.builtin"] = {
+      fg = palette.orange,
     },
     dbui_tables = {
       fg = palette.white,
