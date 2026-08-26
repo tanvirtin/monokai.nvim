@@ -31,6 +31,34 @@ M.classic = {
   diff_text = '#23324d',
 }
 
+M.charcoal = {
+  name = 'monokai_charcoal',
+  base0 = '#232526',
+  base1 = '#292D30',
+  base2 = '#000000',
+  base3 = '#373D44',
+  base4 = '#3E444D',
+  base5 = '#4E545A',
+  base6 = '#9CA0A4',
+  base7 = '#B2B2B2',
+  base8 = '#E4E4E2',
+  border = '#A2B6B2',
+  brown = '#515457',
+  white = '#F9F9F1',
+  grey = '#90918B',
+  black = '#000000',
+  green = '#A7E22F',
+  aqua = '#66D9F0',
+  yellow = '#E7DB75',
+  orange = '#FE981F',
+  purple = '#AF82FF',
+  red = '#EA5778',
+  diff_add = '#3E5314',
+  diff_remove = '#4B1024',
+  diff_change = '#28506B',
+  diff_text = '#24334F',
+}
+
 M.pro = {
   name = 'monokai_pro',
   base0 = '#222426',
