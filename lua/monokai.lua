@@ -677,6 +677,9 @@ M.load_plugin_syntax = function(palette)
     ['@tag.attribute'] = {
       fg = palette.green,
     },
+    ['@tag.builtin.tsx'] = {
+      fg = palette.red,
+    },
     ['@tag.delimiter'] = {
       fg = palette.white,
     },
